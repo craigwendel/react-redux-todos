@@ -1,19 +1,18 @@
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
-import reducer from './reducers'
-import mySaga from './sagas'
+import todosReducer from './reducers/todos'
+import watchTodos from './sagas/todoSagas';
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware()
 // mount it on the Store
 const store = createStore(
-  reducer,
+  todosReducer,
   applyMiddleware(sagaMiddleware)
 )
 
 // then run the saga
-sagaMiddleware.run(mySaga)
-
+sagaMiddleware.run(watchTodos)
 
 export default store
