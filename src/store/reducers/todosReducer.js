@@ -6,7 +6,7 @@ let initialState = {
                 id : 1, 
                 title: 'Lets go!',
                 description: '',
-                completed: false
+                completed: true
             }, 
             {
                 id : 2, 
@@ -20,7 +20,6 @@ let initialState = {
 export default (state = initialState, action) => {
     switch(action.type) {
         case 'ADD_TODO': {
-            console.log('add fired!')
             return {
                 ...state,
                 todos: [...state.todos, action.todo]
@@ -28,12 +27,12 @@ export default (state = initialState, action) => {
         }
 
         case 'REMOVE_TODO': {
-            console.log('remove fired!')
             return {
                 ...state,
                 todos: state.todos.filter(({id}) => id !== action.id)
             }
         }
+
         default:
             return state
 
