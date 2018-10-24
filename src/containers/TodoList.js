@@ -2,20 +2,24 @@ import React, { Component } from 'react'
 // import { Grid, List } from '@material-ui/core/Button'
 import { connect } from 'react-redux'
 
+import TodoItem from './TodoItem'
+
 class TodoList extends Component {
-    render(
-        { todos } = this.props
-    ) {
-        return (
+    render() {
+        console.log(this.props)
+        const { todos } = this.props
+         return (
             <div className="todo-list">
-                <div>{todos}</div>
+                {todos.map(todo => 
+                    <TodoItem key={todo.id} todo={todo} />
+                )}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    todos: state.todos.todos 
+    todos: state.todos
 })
 
 export default connect(mapStateToProps, null)(TodoList)
