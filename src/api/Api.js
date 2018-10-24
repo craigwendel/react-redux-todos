@@ -1,7 +1,9 @@
-import fetch from 'isomorphic-fetch'
+// import isoFetch from 'isomorphic-fetch'
 
-const fetchTodos = () => {
-    return fetch('https://practiceapi.devmountain.com/api/tasks')
-}
+// const fetchTodos = () => {
+//     return isoFetch('https://practiceapi.devmountain.com/api/tasks')
+// }
+    
+    
 
-export default { fetchTodos: fetchTodos }
+// export default { fetchTodos: fetchTodos }
