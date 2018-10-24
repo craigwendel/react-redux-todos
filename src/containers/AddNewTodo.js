@@ -16,14 +16,17 @@ class AddNewTodo extends Component {
     }
 
     handleAddTodo = () => {
-        this.props.addTodo(this.state)
-        this.setState({ title: '' })
+        if (this.state.title.length < 3 || this.state.title === '') {
+            alert('Please enter a valid todo item more than 2 characters.')
+        } else {
+            this.props.addTodo(this.state)
+            this.setState({title: '' })
+        }
     }
 
     render() {
         return (
             <div>
-                <h2>Todos!</h2>
                 <div>
                     <label htmlFor="todo">Add Todo below</label>
                     <input type="text"  onChange={this.handleChange} value={this.state.title} />
