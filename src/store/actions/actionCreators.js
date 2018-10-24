@@ -1,10 +1,11 @@
-// import actions from './actionTypes'
+import actions from './actionTypes'
 
-// export const fetchTodos = () => ({
-// 	type: actions.FETCH_TODOS_START
-// })
+export const fetchTodos = () => ({
+	type: actions.FETCH_TODOS_START
+})
+
 export const addTodo = (todo) => ({
-	type: 'ADD_TODO',
+	type: actions.ADD_TODO_START,
 	todo
 })
 

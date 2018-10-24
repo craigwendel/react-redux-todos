@@ -18,10 +18,10 @@ class App extends Component {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-//     fetchTodos: () => dispatch(fetchTodos())
-// })
+const mapDispatchToProps = (dispatch) => ({
+    fetchTodos: () => dispatch(fetchTodos())
+})
 
-// export default connect(null, mapDispatchToProps)(App)
+export default connect(null, mapDispatchToProps)(App)
 
-export default App;
+// export default App;
