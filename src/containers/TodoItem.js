@@ -11,16 +11,16 @@ const styles = theme => ({
         textDecoration: 'line-through',
         color: 'red',
         fontStyle: 'italic',
-        fontSize: '30px'
+        fontSize: "1.25em"
     },
     listItemText: {
-        font: '30px'
+        fontSize: "1.25em"
     }
 })
 
 export const TodoItem = ({todo, removeTodo, completeTodo, history, classes}) => (
 
-    <ListItem key={todo.id} button onClick={() => { history.push(`/edit/${todo.id}`)}} className={classes.ListItem}>
+    <ListItem key={todo.id} button onClick={() => {history.push(`/edit/${todo.id}`)}} className={classes.ListItem}>
         <ListItemText 
             className={todo.completed ? classes.completedStyle : classes.listItemText}
             primary={todo.title}/>
@@ -34,11 +34,6 @@ export const TodoItem = ({todo, removeTodo, completeTodo, history, classes}) => 
         </ListItemSecondaryAction>
     </ListItem>
 );
-
-const completedStyle = {
-    textDecoration: 'line-through',
-    
-};
 
 TodoItem.propTypes = {
     classes: PropTypes.object.isRequired

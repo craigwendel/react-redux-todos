@@ -53,7 +53,7 @@ export function* editTodoSaga(action) {
         yield put ({ type: actions.EDIT_TODO_COMPLETED })
         yield put ({ type: actions.FETCH_TODOS_COMPLETED, todos: todos })
     } catch (error) {
-        yield put ({ type: actions.COMPLETE_TODO_ERROR, message: error.message })
+        yield put ({ type: actions.EDIT_TODO_ERROR, message: error.message })
     }
 }
 
