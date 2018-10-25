@@ -5,11 +5,10 @@ import Api from '../../api/Api'
 export function* fetchTodosSaga(action) {
    try {
       const response = yield call(Api.fetchTodos)
-      const todos = response.json()
+      const todos = yield response.json()
       yield put({ type: actions.FETCH_TODOS_COMPLETED, todos: todos });
-      console.log('fetching')
    } catch (error) {
-      yield put({type: actions.FETCH_TODOS_ERROR, message: error.message});
+      yield put({ type: actions.FETCH_TODOS_ERROR, message: error.message });
    }
 }
 
