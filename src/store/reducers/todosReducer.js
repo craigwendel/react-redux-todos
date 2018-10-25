@@ -14,13 +14,13 @@ export default (state = initialState, action) => {
 			};
         }
 
-
         case actions.REMOVE_TODO: {
             return {
                 ...state,
                 todos: state.todos.filter(({id}) => id !== action.id)
             }
         }
+
 
         default:
             return state
