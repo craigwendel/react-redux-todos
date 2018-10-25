@@ -6,7 +6,7 @@ import AddNewTodo from '../containers/AddNewTodo'
 
 
 export const TodoHome = () => (
-    <Grid>
+    <Grid container justify='center'>
         <AddNewTodo />
         <TodoList />
     </Grid>
