@@ -20,7 +20,6 @@ class AddNewTodo extends Component {
         } else {
             this.props.addTodo(this.state)
             this.setState({title: '' })
-            this.setState({description: '' })
         }
     }
 
@@ -30,7 +29,6 @@ class AddNewTodo extends Component {
                 <div>
                     <label htmlFor="todo">Add Todo below</label>
                     <input type="text"  onChange={this.handleChange} value={this.state.title} name="title" />
-                    <input type="text"  onChange={this.handleChange} value={this.state.description} name="description" placeholder="Write a short description if you'd like!"/>
                     <button onClick={this.handleAddTodo}>ADD TODO</button>
                 </div>
             </div>

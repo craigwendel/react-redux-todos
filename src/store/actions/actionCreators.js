@@ -10,11 +10,11 @@ export const addTodo = (todo) => ({
 })
 
 export const completeTodo = (id) => ({
-	type: 'COMPLETE_TODO',
+	type: actions.COMPLETE_TODO_START,
 	id
 })
 
 export const removeTodo = (id) => ({
-	type: 'REMOVE_TODO',
+	type: actions.REMOVE_TODO_START,
 	id
 })

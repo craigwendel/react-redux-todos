@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './containers/App';
 import { Provider } from 'react-redux';
 
-import store from './store/store'
+import configureStore from './store/store'
+import { fetchTodos } from './store/actions/actionCreators';
 
-store.subscribe(() => {
-    console.log(store.getState())
-})
+const store  = configureStore()
+
+// const initialFetch = () => {
+//     store.dispatch(fetchTodos())
+// }
+
+// initialFetch()
 
 
 ReactDOM.render(

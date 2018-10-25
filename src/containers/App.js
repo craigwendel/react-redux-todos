@@ -13,15 +13,16 @@ class App extends Component {
                 <h1>These are the todos</h1>
                 <AddNewTodo />
                 <TodoList />
+                {/* <button onClick={this.props.fetchTodos}>Load Todos</button> */}
             </div>
         );
     }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    fetchTodos: () => dispatch(fetchTodos())
-})
+// const mapDispatchToProps = (dispatch) => ({
+//     fetchTodos: () => dispatch(fetchTodos())
+// })
 
-export default connect(null, mapDispatchToProps)(App)
+// export default connect(null, mapDispatchToProps)(App)
 
-// export default App;
+export default App;

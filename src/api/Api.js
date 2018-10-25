@@ -7,15 +7,22 @@ const fetchTodos = () => {
 const addNewTodo = ({title}) => {
 	const postHeaders = new Headers();
 	postHeaders.append('Content-Type', 'application/json');
-	return isoFetch(`https://practiceapi.devmountain.com/api/tasks`, {
-		method: "post",
+	return isoFetch('https://practiceapi.devmountain.com/api/tasks', {
+		method: "POST",
 		headers: postHeaders,
 		body: JSON.stringify( { title: title } )
+	});
+}
+
+const deleteTodo = (id) => {
+	return isoFetch(`https://practiceapi.devmountain.com/api/tasks/${id}`, {
+		method: "DELETE",
 	});
 }
 
 
 export default { 
     fetchTodos: fetchTodos,
-    addNewTodo: addNewTodo
+    addNewTodo: addNewTodo,
+    deleteTodo: deleteTodo
 }
