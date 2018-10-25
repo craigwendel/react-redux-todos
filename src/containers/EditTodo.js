@@ -170,8 +170,8 @@ EditTodo.propTypes = {
 }
 
 const mapStateToProps = (state, props) => {
-    if(state.loaded) {
-        const currentTodo = state.todos.find((todo) => todo.id === parseInt(props.match.params.id, 10))
+    if(state.todos.loaded) {
+        const currentTodo = state.todos.todos.find((todo) => todo.id === parseInt(props.match.params.id, 10))
         const { title, description, completed } = currentTodo
         const initialTodo = {
             title: title,
@@ -181,14 +181,14 @@ const mapStateToProps = (state, props) => {
         return { 
             todo: currentTodo,
             initialTodo: initialTodo,
-            loaded: state.loaded 
+            loaded: state.todos.loaded
         }
     }
 
     return { 
         todo: {},
         initialTodo: {},
-        loaded: state.loaded 
+        loaded: state.todos.loaded
     }
 }
         

@@ -12,11 +12,13 @@ const initialFetch = () => {
     store.dispatch(fetchTodos())
 }
 
+initialFetch()
+
 ReactDOM.render(
     <Provider store={store}>
         <App />
     </Provider>,
 document.getElementById('root'));
 
-initialFetch()
+
 
