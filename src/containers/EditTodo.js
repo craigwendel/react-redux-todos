@@ -12,11 +12,26 @@ const styles = theme => ({
         textAlign: 'center',
         margin: theme.spacing.unit * 2,
     },
-    detailsButtonText: {
-
+    backButtonDivDetails: {
+        marginTop: "1em",
+        marginBottom: "3em"
     },
     buttonDetails: {
-
+        marginBottom: "5em",
+        marginTop: "2em"
+    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        marginTop: "1em",
+        textAlign: "left",
+        width: 400,
+    },
+    descTextField: {
+        marginTop: "1em",
+        textAlign: "left",
+        width: 400,
+        marginRight: "7.25em"
     }
 })
 
@@ -78,12 +93,12 @@ render() {
     return (
         loaded ? 
             <Grid container justify="center" >
-                <Grid item xs={12}className={classes.editTodoRoot}>
+                <Grid item xs={8}className={classes.editTodoRoot}>
                     <Paper>
                         <Grid container className={classes.editTodoRoot}>
-                            <Grid item xs={6}>
+                            <Grid item xs={6} className={classes.backButtonDivDetails}>
                                 <Button variant="outlined" size="medium" color="default" onClick={this.handleBackButton}>
-                                    <Typography variant="button" className={classes.detailsButtonText}>Back to todos</Typography>
+                                    <Typography variant="button">Back to todos</Typography>
                                 </Button>
                             </Grid>
                             <Grid item xs={12}> 
@@ -101,7 +116,8 @@ render() {
                                     size="medium"
                                     disabled={todo.completed}
                                     onClick={() => this.handleOnCompleted(todo.id)}
-                                >Complete</Button>
+                                    >Complete
+                                </Button>
                             </Grid>
                             <Grid item xs={12}>
                                 <TextField 
@@ -110,11 +126,11 @@ render() {
                                     name="description"
                                     value={todo.description}
                                     onChange={this.handleOnChange}
-                                    className={classes.textField}
+                                    className={classes.descTextField}
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Grid container justify="space-evenly" spacing={12}>
+                                <Grid container justify="space-evenly" spacing={8}>
                                     <Grid item xs={4}>
                                         <Button
                                             color="primary"

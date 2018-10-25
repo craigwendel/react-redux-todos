@@ -8,16 +8,15 @@ import { fetchTodos } from './store/actions/actionCreators';
 
 const store  = configureStore()
 
-// const initialFetch = () => {
-//     store.dispatch(fetchTodos())
-// }
-
-// initialFetch()
-
+const initialFetch = () => {
+    store.dispatch(fetchTodos())
+}
 
 ReactDOM.render(
     <Provider store={store}>
         <App />
     </Provider>,
 document.getElementById('root'));
+
+initialFetch()
 

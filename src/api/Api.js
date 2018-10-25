@@ -33,7 +33,7 @@ const editTodo = (id, updates) => {
 	return isoFetch(`https://practiceapi.devmountain.com/api/tasks/${id}`, {
 		method: "PATCH",
 		headers: patchHeaders,
-		body: JSON.stringify( updates )
+		body: JSON.stringify(updates)
 	});
 }
 

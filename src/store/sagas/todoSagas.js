@@ -48,7 +48,7 @@ export function* completeTodoSaga(action) {
 
 export function* editTodoSaga(action) {
     try {
-        const response = yield Api.editTodo(action.id)
+        const response = yield Api.editTodo(action.id, action.updates)
         const todos = yield response.json()
         yield put ({ type: actions.EDIT_TODO_COMPLETED })
         yield put ({ type: actions.FETCH_TODOS_COMPLETED, todos: todos })

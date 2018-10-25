@@ -61,7 +61,6 @@ class AddNewTodo extends Component {
                             </Grid>
                             <Grid item xs={12}>
                                 <TextField
-                                    id="standard-with-placeholder"
                                     label="New todo"
                                     placeholder="Enter a todo!"
                                     className={this.props.classes.textField}
