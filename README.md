@@ -1,11 +1,11 @@
-#React-Redux-Todos
+# React-Redux-Todos
 This application allows for users to enter todos and edit, complete, or delete those todos. The technologu used includes React, Redux, Redux-saga, and Material UI for the design.
 
-##Screenshots
+## Screenshots
 ![homepage](src/images/todohome.png)
 ![editscreen](src/images/todoedit.png)
 
-##Installation
+## Installation
 ``` 
 git clone https://github.com/craigwendel/react-redux-todos.git 
 cd react-redux-todos 
@@ -16,5 +16,5 @@ open localhost:3000 in the browser
 
 ```
 
-##License
+## License
 This project is licensed under the MIT License.
