@@ -1,29 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { removeTodo, completeTodo } from '../store/actions/actionCreators'
 import { connect } from 'react-redux'
 
-class TodoItem extends Component {
+export const TodoItem = ({todo, removeTodo, completeTodo}) => (
 
-    handleRemove = () => {
-        this.props.removeTodo(this.props.todo.id)
-    }
-
-    handleComplete = () => {
-        this.props.completeTodo(this.props.todo.id)
-    }
- 
-    render() {
-        return (
-            <div className="todo-item" key={this.props.todo.id}>
-                <span>
-                    <h4 style={(this.props.todo.completed) ? completedStyle : null}>{this.props.todo.title}</h4>
-                    <button onClick={this.handleComplete}>Complete</button>
-                    <button onClick={this.handleRemove}>Delete</button>
-                </span>
-            </div>
-        );
-    }
-}
+    <div className="todo-item" key={todo.id}>
+        <span>
+            <h4 style={(todo.completed) ? completedStyle : null}>{todo.title}</h4>
+            <button onClick={() => completeTodo(todo.id)}>Complete</button>
+            <button onClick={() => removeTodo(todo.id)}>Delete</button>
+        </span>
+    </div>
+)  
 
 const completedStyle = {
     textDecoration: 'line-through',

@@ -13,7 +13,7 @@ export const TodoList = ({todos}) => (
 )
 
 const mapStateToProps = (state) => ({
-    todos: state.todos.todos
+    todos: state.todos
 })
 
 export default connect(mapStateToProps, null)(TodoList)

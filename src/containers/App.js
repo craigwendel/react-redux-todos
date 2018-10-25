@@ -1,19 +1,22 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchTodos } from '../store/actions/actionCreators';
 
-import TodoList from './TodoList'
-import AddNewTodo from './AddNewTodo'
-
+import TodoHome from '../components/TodoHome'
+import EditTodo from '../containers/EditTodo'
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>These are the todos</h1>
-                <AddNewTodo />
-                <TodoList />
-                {/* <button onClick={this.props.fetchTodos}>Load Todos</button> */}
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path ='/' component={TodoHome} />
+                        <Route path = '/edit/:id' component={EditTodo} />
+                        <Redirect path = '*' to='/'/>
+                    </Switch>
+                </BrowserRouter>
             </div>
         );
     }

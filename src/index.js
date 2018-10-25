@@ -8,11 +8,11 @@ import { fetchTodos } from './store/actions/actionCreators';
 
 const store  = configureStore()
 
-const initialFetch = () => {
-    store.dispatch(fetchTodos())
-}
+// const initialFetch = () => {
+//     store.dispatch(fetchTodos())
+// }
 
-initialFetch()
+// initialFetch()
 
 
 ReactDOM.render(
