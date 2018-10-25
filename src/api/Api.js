@@ -26,10 +26,22 @@ const completeTodo = (id) => {
 	});
 }
 
+const editTodo = (id, updates) => {
+	const patchHeaders = new Headers();
+	patchHeaders.append('Content-Type', 'application/json');
+	patchHeaders.append('Access-Control-Allow-Origin', '*');
+	return isoFetch(`https://practiceapi.devmountain.com/api/tasks/${id}`, {
+		method: "PATCH",
+		headers: patchHeaders,
+		body: JSON.stringify( updates )
+	});
+}
+
 
 export default { 
     fetchTodos: fetchTodos,
     addNewTodo: addNewTodo,
     deleteTodo: deleteTodo,
-    completeTodo: completeTodo
+    completeTodo: completeTodo,
+    editTodo: editTodo
 }

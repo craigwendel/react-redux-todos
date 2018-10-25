@@ -2,7 +2,7 @@ import React from 'react'
 import { List } from '@material-ui/core'
 import { connect } from 'react-redux'
 
-import TodoItem from './TodoItem'
+import TodoItem from '../containers/TodoItem'
 
 export const TodoList = ({todos}) => (
     <List className="todo-list">

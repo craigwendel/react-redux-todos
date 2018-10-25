@@ -46,13 +46,21 @@ export function* completeTodoSaga(action) {
     }
 }
 
-
-
-
+export function* editTodoSaga(action) {
+    try {
+        const response = yield Api.editTodo(action.id)
+        const todos = yield response.json()
+        yield put ({ type: actions.EDIT_TODO_COMPLETED })
+        yield put ({ type: actions.FETCH_TODOS_COMPLETED, todos: todos })
+    } catch (error) {
+        yield put ({ type: actions.COMPLETE_TODO_ERROR, message: error.message })
+    }
+}
 
 export default function* watchTodos() {
     yield takeEvery(actions.FETCH_TODOS_START, fetchTodosSaga)
     yield takeEvery(actions.ADD_TODO_START, addNewTodoSaga)
     yield takeEvery(actions.REMOVE_TODO_START, removeTodoSaga)
     yield takeEvery(actions.COMPLETE_TODO_START, completeTodoSaga)
+    yield takeEvery(actions.EDIT_TODO_START, editTodoSaga)
 };
